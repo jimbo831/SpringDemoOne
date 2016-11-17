@@ -4,23 +4,14 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="sport.properties" />
-
     <bean id="myFortuneService"
-          class="com.johnbwhitejr.springdemo.fortunes.RandomFortuneService">
-        <property name="fortunes" value="${random.fortune.array}" />
+          class="com.johnbwhitejr.springdemo.fortunes.HappyFortuneService">
     </bean>
 
     <bean id="myCoach"
-          class="com.johnbwhitejr.springdemo.coaches.TrackCoach">
+          class="com.johnbwhitejr.springdemo.coaches.TrackCoach"
+          scope="prototype">
             <constructor-arg ref="myFortuneService" />
-    </bean>
-
-    <bean id="myCricketCoach"
-          class="com.johnbwhitejr.springdemo.coaches.CricketCoach">
-        <property name="fortuneService" ref="myFortuneService" />
-        <property name="emailAddress" value="${foo.email}" />
-        <property name="team" value="${foo.team}" />
     </bean>
 
 </beans>

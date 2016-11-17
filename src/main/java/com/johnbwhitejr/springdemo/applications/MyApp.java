@@ -1,4 +1,4 @@
-package com.johnbwhitejr.springdemo;
+package com.johnbwhitejr.springdemo.applications;
 
 import com.johnbwhitejr.springdemo.coaches.Coach;
 import com.johnbwhitejr.springdemo.coaches.TrackCoach;
